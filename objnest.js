@@ -16,7 +16,7 @@ var objnest = {
      *  var obj = objnest.expand({
      *      'foo.bar': 'baz'
      *  });
-     *  console.log(obj); // {foo: {bar: 'baz'}}
+     *  console.log(obj); // => {foo: {bar: 'baz'}}
      */
     expand: function (object) {
         var result = {};
@@ -43,7 +43,7 @@ var objnest = {
      *  var flattened = objnest.flatten({
      *      'foo': {'bar': 'baz'}
      *  });
-     *  console.log(flattened); => {'foo.bar': 'baz'}
+     *  console.log(flattened); // => {'foo.bar': 'baz'}
      */
     flatten: function (nested) {
         var flattened = {};

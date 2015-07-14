@@ -17,18 +17,18 @@ Usage
 ```javascript
 var objnest = require('objnest');
 var flattened = objnest.flatten({
-      'foo': {'bar': 'baz'}
-  });
-  console.log(flattened); => {'foo.bar': 'baz'}
+    'foo': {'bar': 'baz'}
+});
+console.log(flattened); // => {'foo.bar': 'baz'}
 ```
 
 **Expand object.**
 ```javascript
 var objnest = require('objnest');
 var expanded = objnest.expand({
-   'foo.bar': 'baz'
-   });
-console.log(expanded); // {foo: {bar: 'baz'}}
+    'foo.bar': 'baz'
+});
+console.log(expanded); // => {foo: {bar: 'baz'}}
 ```
 
 
