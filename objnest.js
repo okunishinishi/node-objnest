@@ -6,7 +6,7 @@
 
 var extend = require('extend');
 
-/** @lends objnest */
+/** @lends module:objnest */
 var objnest = {
     /**
      * Flatten nested object.
