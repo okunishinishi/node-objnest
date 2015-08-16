@@ -4,7 +4,8 @@
  */
 "use strict";
 
-var extend = require('extend');
+var extend = require('extend'),
+    util = require('util');
 
 /** @lends module:objnest */
 var objnest = {
@@ -28,7 +29,14 @@ var objnest = {
                     thisKey = subKeys.shift();
                 subObj[subKeys.join('.')] = val;
                 var subExpandedObj = objnest.expand(subObj);
-                result[thisKey] = extend(subExpandedObj, result[thisKey] || {});
+                var thisVal = result[thisKey];
+                val = extend(true, subExpandedObj, thisVal || {});
+                key = thisKey;
+            }
+            if (_isArrayKey(key)) {
+                var arrayKey = _fromArrayKey(key);
+                result[arrayKey.name] = result[arrayKey.name] || [];
+                result[arrayKey.name][arrayKey.index] = val;
             } else {
                 result[key] = val;
             }
@@ -58,7 +66,12 @@ var objnest = {
                 default:
                     var subValues = objnest.flatten(value);
                     Object.keys(subValues).forEach(function (subKey) {
-                        var fullKey = [key, subKey].join('.');
+                        var fullKey;
+                        if (Array.isArray(value)) {
+                            fullKey = key + _toArrayKey(subKey);
+                        } else {
+                            fullKey = [key, subKey].join('.');
+                        }
                         flattened[fullKey] = subValues[subKey];
                     });
                     break;
@@ -67,5 +80,19 @@ var objnest = {
         return flattened;
     }
 };
+
+function _toArrayKey(key) {
+    var components = key.split(/\./g);
+    return [util.format('[%d]', components[0])].concat(components.slice(1)).join('.');
+}
+function _isArrayKey(key) {
+    return /\[\d\]$/.test(key);
+}
+function _fromArrayKey(key) {
+    return {
+        name: key.replace(/\[\d+\]$/, ''),
+        index: Number(key.match(/\[(\d+)\]$/)[1])
+    }
+}
 
 module.exports = objnest;
