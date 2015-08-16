@@ -68,6 +68,30 @@ var expanded = objnest.expand({
 });
 console.log(expanded); // => {foo: {bar: 'baz'}}
 ```
+Tips
+----
+
+
+### Handling Array
+
+Brackets with numbers are parsed as array.
+
+```javascript
+var objnest = require('objnest');
+var flattened = objnest.flatten({
+    'foo': {'bar': ['baz0', 'baz1']}
+});
+console.log(flattened); // => {'foo.bar[0]': 'baz0', 'foo.bar[1]': 'baz1'}
+```
+
+```javascript
+var objnest = require('objnest');
+var expanded = objnest.expand({
+    'foo.bar[0]': 'baz0',
+    'foo.bar[1]': 'baz1'
+});
+console.log(expanded); // => {foo: bar:['baz0', 'baz1']}}
+```
 
 <!-- Sections Start -->
 
