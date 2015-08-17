@@ -59,6 +59,7 @@ var objnest = {
             var value = nested[key];
             switch (typeof(value)) {
                 case 'string':
+                case 'boolean':
                 case 'number':
                 case 'function':
                     flattened[key] = value;

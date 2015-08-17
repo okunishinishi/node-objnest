@@ -10,10 +10,12 @@ var objnest = require('./objnest');
 exports['Run flatten.'] = function (test) {
     var flattened = objnest.flatten({
         foo: {
-            bar: 'baz'
+            bar: 'baz',
+            quz: 2,
+            quzz: true
         }
     });
-    test.deepEqual(flattened, {'foo.bar': 'baz'});
+    test.deepEqual(flattened,  { 'foo.bar': 'baz', 'foo.quz': 2, 'foo.quzz': true });
     test.done();
 };
 
