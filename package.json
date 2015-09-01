@@ -1,6 +1,6 @@
 {
   "name": "objnest",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "Convert nested object to flatten or expand.",
   "main": "lib",
   "scripts": {
@@ -39,6 +39,7 @@
     "coz-tmpl": "^1.0.4"
   },
   "dependencies": {
-    "argx": "^1.2.4"
+    "argx": "^1.2.4",
+    "extend": "^3.0.0"
   }
 }
