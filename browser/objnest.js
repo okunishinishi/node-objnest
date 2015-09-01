@@ -72,6 +72,7 @@ function flatten(nested) {
         switch (typeof(value)) {
             case 'string':
             case 'number':
+            case 'boolean':
             case 'function':
                 flattened[key] = value;
                 break;
@@ -97,7 +98,7 @@ module.exports = flatten;
 /**
  * Convert nested object to flatten or expand.
  * @module objnest
- * @version 1.1.3
+ * @version 1.2.0
  */
 
 "use strict";
