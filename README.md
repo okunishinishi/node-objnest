@@ -8,6 +8,7 @@ objnest
 [![Code Climate][bd_codeclimate_shield_url]][bd_codeclimate_url]
 [![Code Coverage][bd_codeclimate_coverage_shield_url]][bd_codeclimate_url]
 [![npm Version][bd_npm_shield_url]][bd_npm_url]
+[![bower version][bd_bower_badge_url]][bd_repo_url]
 
 [bd_repo_url]: https://github.com/okunishinishi/node-objnest
 [bd_travis_url]: http://travis-ci.org/okunishinishi/node-objnest
@@ -20,6 +21,7 @@ objnest
 [bd_gemnasium_shield_url]: https://gemnasium.com/okunishinishi/node-objnest.svg
 [bd_npm_url]: http://www.npmjs.org/package/objnest
 [bd_npm_shield_url]: http://img.shields.io/npm/v/objnest.svg?style=flat
+[bd_bower_badge_url]: https://img.shields.io/bower/v/objnest.svg?style=flat
 
 <!-- Badge End -->
 
@@ -33,15 +35,24 @@ Convert nested object to flatten or expand.
 
 
 
+
 <!-- Sections Start -->
 <a name="sections"></a>
 
+<!-- Section from "docs/readme/01.Installation.md.hbs" Start -->
+
+<a name="section-docs-readme-01-installation-md"></a>
 Installation
 -----
 
 ```bash
 npm install objnest --save
 ```
+<!-- Section from "docs/readme/01.Installation.md.hbs" End -->
+
+<!-- Section from "docs/readme/02.Usage.md.hbs" Start -->
+
+<a name="section-docs-readme-02-usage-md"></a>
 Usage
 -----
 
@@ -68,6 +79,11 @@ var expanded = objnest.expand({
 });
 console.log(expanded); // => {foo: {bar: 'baz'}}
 ```
+<!-- Section from "docs/readme/02.Usage.md.hbs" End -->
+
+<!-- Section from "docs/readme/03.Tips.md.hbs" Start -->
+
+<a name="section-docs-readme-03-tips-md"></a>
 Tips
 ----
 
@@ -92,6 +108,8 @@ var expanded = objnest.expand({
 });
 console.log(expanded); // => {foo: bar:['baz0', 'baz1']}}
 ```
+<!-- Section from "docs/readme/03.Tips.md.hbs" End -->
+
 
 <!-- Sections Start -->
 

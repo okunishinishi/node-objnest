@@ -1,0 +1,18 @@
+{
+  "name": "objnest",
+  "description": "Convert nested object to flatten or expand.",
+  "version": "1.1.3",
+  "homepage": "https://github.com/okunishinishi/node-objnest#readme",
+  "authors": [
+    "Taka Okunishi"
+  ],
+  "main": "browser/objnest.js",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
