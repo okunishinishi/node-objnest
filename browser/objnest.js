@@ -98,7 +98,7 @@ module.exports = flatten;
 /**
  * Convert nested object to flatten or expand.
  * @module objnest
- * @version 1.2.1
+ * @version 1.2.2
  */
 
 "use strict";

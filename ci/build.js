@@ -20,7 +20,7 @@ apeTasking.runTasks('build', [
             'test/.*.bud'
         ], callback);
     },
-    function browsify(callback) {
+    function browserify(callback) {
         var src = require.resolve('../lib'),
             dest = require('../bower')['main'];
         apeCompiling.renderBrowserScript(src, dest, {
