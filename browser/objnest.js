@@ -98,15 +98,18 @@ module.exports = flatten;
 /**
  * Convert nested object to flatten or expand.
  * @module objnest
- * @version 1.2.2
+ * @version 1.2.3
  */
 
 "use strict";
 
+var pkg = require('../package.json');
+
+exports.version = pkg.version;
 exports.expand = require('./expand');
 exports.flatten = require('./flatten');
 
-},{"./expand":2,"./flatten":3}],5:[function(require,module,exports){
+},{"../package.json":9,"./expand":2,"./flatten":3}],5:[function(require,module,exports){
 /**
  * Convert from array key.
  * @memberof module:objnest/lib/key
@@ -250,5 +253,49 @@ module.exports = function extend() {
 	return target;
 };
 
+
+},{}],9:[function(require,module,exports){
+module.exports={
+  "name": "objnest",
+  "version": "1.2.3",
+  "description": "Convert nested object to flatten or expand.",
+  "main": "lib",
+  "scripts": {
+    "build": "./ci/build.js",
+    "test": "./ci/test.js",
+    "cover": "./ci/cover.js",
+    "report": "./ci/report.js"
+  },
+  "repository": "okunishinishi/node-objnest",
+  "keywords": [
+    "object",
+    "nested"
+  ],
+  "author": {
+    "name": "Taka Okunishi",
+    "url": "http://okunishitaka.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/okunishinishi/node-objnest/issues"
+  },
+  "homepage": "https://github.com/okunishinishi/node-objnest#readme",
+  "devDependencies": {
+    "ape-compiling": "^1.0.3",
+    "ape-covering": "^1.0.8",
+    "ape-releasing": "^1.0.16",
+    "ape-reporting": "^1.0.9",
+    "ape-tasking": "^1.0.7",
+    "ape-testing": "^1.3.2",
+    "ape-tmpl": "^1.3.5",
+    "ape-updating": "^1.0.1",
+    "coz": "^3.0.15",
+    "coz-tmpl": "^1.0.4"
+  },
+  "dependencies": {
+    "argx": "^1.3.0",
+    "extend": "^3.0.0"
+  }
+}
 
 },{}]},{},[1]);

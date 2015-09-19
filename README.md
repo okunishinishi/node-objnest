@@ -56,7 +56,7 @@ npm install objnest --save
 Usage
 -----
 
-**Flatten Object Properties**
+#### Flatten Object Properties
 
 Convert nested object into flatten structure.
 
@@ -68,7 +68,7 @@ var flattened = objnest.flatten({
 console.log(flattened); // => {'foo.bar': 'baz'}
 ```
 
-**Expand Object Properties**
+#### Expand Object Properties
 
 Convert flattened object into nested structure.
 
@@ -87,8 +87,7 @@ console.log(expanded); // => {foo: {bar: 'baz'}}
 Tips
 ----
 
-
-### Handling Array
+#### Handling Array
 
 Brackets with numbers are parsed as array.
 

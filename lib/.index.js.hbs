@@ -6,5 +6,8 @@
 
 "use strict";
 
+var pkg = require('../package.json');
+
+exports.version = pkg.version;
 exports.expand = require('./expand');
 exports.flatten = require('./flatten');
