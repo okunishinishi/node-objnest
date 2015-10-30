@@ -98,7 +98,7 @@ module.exports = flatten;
 /**
  * Convert nested object to flatten or expand.
  * @module objnest
- * @version 1.2.3
+ * @version 1.2.4
  */
 
 "use strict";
@@ -257,14 +257,11 @@ module.exports = function extend() {
 },{}],9:[function(require,module,exports){
 module.exports={
   "name": "objnest",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "Convert nested object to flatten or expand.",
   "main": "lib",
   "scripts": {
-    "build": "./ci/build.js",
-    "test": "./ci/test.js",
-    "cover": "./ci/cover.js",
-    "report": "./ci/report.js"
+    "test": "./ci/test.js"
   },
   "repository": "okunishinishi/node-objnest",
   "keywords": [
@@ -281,19 +278,18 @@ module.exports={
   },
   "homepage": "https://github.com/okunishinishi/node-objnest#readme",
   "devDependencies": {
-    "ape-compiling": "^1.0.3",
-    "ape-covering": "^1.0.8",
+    "ape-compiling": "^1.1.5",
+    "ape-covering": "^1.1.0",
     "ape-releasing": "^1.0.16",
     "ape-reporting": "^1.0.9",
-    "ape-tasking": "^1.0.7",
-    "ape-testing": "^1.3.2",
-    "ape-tmpl": "^1.3.5",
-    "ape-updating": "^1.0.1",
-    "coz": "^3.0.15",
-    "coz-tmpl": "^1.0.4"
+    "ape-tasking": "^1.0.8",
+    "ape-testing": "^1.5.0",
+    "ape-tmpl": "^1.3.16",
+    "ape-updating": "^1.1.1",
+    "coz": "^3.1.6",
+    "coz-tmpl": "^1.1.0"
   },
   "dependencies": {
-    "argx": "^1.3.0",
     "extend": "^3.0.0"
   }
 }
