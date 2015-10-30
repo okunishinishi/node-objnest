@@ -2,16 +2,13 @@ language: node_js
 node_js:
 - '0.11'
 before_install: 
-- npm install browserify -g
+- npm install istanbul nodeunit browserify -g
 install:
 - npm install
 before_script:
 - npm link .
 script:
-- npm run build
-- npm run test
-- npm run cover
-- npm run report
-env:
-  global:
-  - secure: HdNnUNCkLJokanXUQcKoaZT9LtVkJLFzmX4QT0DD2iTh+MwwvgZsAHbmIWie5/92zStRXiyX5vNcNMXeCkMLymdH9iM5g0VmZt7Oayf2WbYiIDj5mLEsy8JU1RNZ55zupNp5aB/bUlVx2jS2uPj68doiwCXPpYAyHFLzIkKxlwOHPipzBuUSpPQLaoaZ5F+1lEDwBYT9x6GDwWvwpI4kmPDiUHLNokLnPR5DW1q/ciOz4fPfTF1I2nvbGwy56nBpAplRs1eeZNOLBfF4agBmyayxkMgwTKuz5J9WAvu63ez2IVSrO638uweB1F0svnhez0IHdNFS9FUxMRQB3g5kqK242mUctRfeggfcvNegLtV3+d67nIcT/nI6KrUR6nr51fG2l4kX6ozBlU+2DVrMi6TwopqlHyhI2cog3nnD+GfkhXM1QDiYIdEuRpWnW18OkIQKmUh8/y45qwNvnyE3Blq0IlRCrNyFt9Bvmjnt2oDy6LwWKTBvm/l/ANfV2o/WRs1j82tMkqsm+suhHzwpGdkETkWb0aohzxtMJuqVDaoHT7w34lCBCrTOOyPeKpziZUT2B+OqlpkB2qmrEsZ1ANg3emP8sp4BlibxrllLY8liOhTyEPRvxNMFeoJkgUW77J/IDnsveMIQ5+vJOvbZMwEGWPvBhBi6HJR8nnjuiPM=
+- ./ci/build.js
+- ./ci/test.js
+- ./ci/cover.js
+- ./ci/report.js
