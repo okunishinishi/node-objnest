@@ -6,8 +6,14 @@
 
 "use strict";
 
-var pkg = require('../package.json');
+const pkg = require('../package.json'),
+    create = require('./create'),
+    Objnest = require('./objnest');
 
-exports.version = pkg.version;
-exports.expand = require('./expand');
-exports.flatten = require('./flatten');
+let lib = create();
+
+lib.version = pkg.version;
+lib.create = create;
+lib.Objnest = Objnest;
+
+module.exports = Objnest;

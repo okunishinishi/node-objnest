@@ -1,8 +1,8 @@
 language: node_js
 node_js:
-- '0.11'
+- '4.0'
 before_install: 
-- npm install istanbul nodeunit browserify -g
+- npm install istanbul mocha browserify -g
 install:
 - npm install
 before_script:

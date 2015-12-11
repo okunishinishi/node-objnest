@@ -1,5 +1,7 @@
-var objnest = require('objnest');
-var expanded = objnest.expand({
+"use strict";
+
+const objnest = require('objnest');
+let expanded = objnest.expand({
     'foo.bar[0]': 'baz0',
     'foo.bar[1]': 'baz1'
 });

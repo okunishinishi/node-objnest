@@ -72,8 +72,10 @@ Usage
 Convert nested object into flatten structure.
 
 ```javascript
-var objnest = require('objnest');
-var flattened = objnest.flatten({
+"use strict";
+
+const objnest = require('objnest');
+let flattened = objnest.flatten({
     'foo': {'bar': 'baz'}
 });
 console.log(flattened); // => {'foo.bar': 'baz'}
@@ -84,8 +86,10 @@ console.log(flattened); // => {'foo.bar': 'baz'}
 Convert flattened object into nested structure.
 
 ```javascript
-var objnest = require('objnest');
-var expanded = objnest.expand({
+"use strict";
+
+const objnest = require('objnest');
+let expanded = objnest.expand({
     'foo.bar': 'baz'
 });
 console.log(expanded); // => {foo: {bar: 'baz'}}
@@ -104,16 +108,20 @@ Tips
 Brackets with numbers are parsed as array.
 
 ```javascript
-var objnest = require('objnest');
-var flattened = objnest.flatten({
+"use strict";
+
+const objnest = require('objnest');
+let flattened = objnest.flatten({
     'foo': {'bar': ['baz0', 'baz1']}
 });
 console.log(flattened); // => {'foo.bar[0]': 'baz0', 'foo.bar[1]': 'baz1'}
 ```
 
 ```javascript
-var objnest = require('objnest');
-var expanded = objnest.expand({
+"use strict";
+
+const objnest = require('objnest');
+let expanded = objnest.expand({
     'foo.bar[0]': 'baz0',
     'foo.bar[1]': 'baz1'
 });
