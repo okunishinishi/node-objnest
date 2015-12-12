@@ -1,6 +1,6 @@
 {
   "name": "objnest",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "Convert nested object to flatten or expand.",
   "main": "lib",
   "scripts": {
