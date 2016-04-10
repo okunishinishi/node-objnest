@@ -35,6 +35,7 @@ describe('objnest', () => {
             'foo.bar.quzz[1].fuge[0]': 'fuge0',
             'foo.bar.quzz[1].fuge[1]': 'fuge1'
         });
+        console.log(obj);
         assert.deepEqual(obj, {
             "foo": {
                 "bar": {
@@ -54,6 +55,36 @@ describe('objnest', () => {
         done();
     });
 
+    it('Expand object array', (done) => {
+        let expanded = objnest.expand({
+            'data[0].type': 'users',
+            'data[0].attributes.key': 'foo_bar3',
+            'data[0].attributes.email': 'apbc3@example.com',
+            'data[1].type': 'users',
+            'data[1].attributes.key': 'foo_bar4',
+            'data[1].attributes.email': 'apbc4@example.com'
+        });
+        assert.deepEqual(expanded, {
+            "data": [
+                {
+                    "type": "users",
+                    "attributes": {
+                        "key": "foo_bar3",
+                        "email": "apbc3@example.com"
+                    }
+                },
+                {
+                    "type": "users",
+                    "attributes": {
+                        "key": "foo_bar4",
+                        "email": "apbc4@example.com"
+                    }
+                }
+            ]
+        });
+        done();
+    });
+
     it('Run flatten.', (done) => {
         let flattened = objnest.flatten({
             foo: {
@@ -67,10 +98,10 @@ describe('objnest', () => {
     });
 
     it('Flatten css.', (done) => {
-        let flattened = new Objnest({separator:' '}).flatten({
-            body:{
-                "main":{
-                    color:"#555"
+        let flattened = new Objnest({separator: ' '}).flatten({
+            body: {
+                "main": {
+                    color: "#555"
                 }
             }
         });
