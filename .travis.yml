@@ -5,8 +5,6 @@ before_install:
 - npm install istanbul mocha browserify -g
 install:
 - npm install
-before_script:
-- npm link .
 script:
 - ./ci/build.js
 - ./ci/test.js

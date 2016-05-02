@@ -1,6 +1,6 @@
 {
   "name": "objnest",
-  "version": "2.0.5",
+  "version": "2.0.6",
   "description": "Convert nested object to flatten or expand.",
   "main": "lib",
   "scripts": {
@@ -20,18 +20,18 @@
     "url": "https://github.com/okunishinishi/node-objnest/issues"
   },
   "homepage": "https://github.com/okunishinishi/node-objnest#readme",
-  "devDependencies": {
-    "ape-covering": "^2.0.2",
-    "ape-releasing": "^2.0.1",
-    "ape-reporting": "^2.0.3",
-    "ape-tasking": "^2.0.2",
-    "ape-testing": "^2.0.1",
-    "ape-tmpl": "^3.0.3",
-    "ape-updating": "^2.0.4",
-    "coz": "^4.0.4"
-  },
   "dependencies": {
     "extend": "^3.0.0"
+  },
+  "devDependencies": {
+    "ape-covering": "^3.0.1",
+    "ape-releasing": "^3.0.8",
+    "ape-reporting": "^3.0.0",
+    "ape-tasking": "^3.1.2",
+    "ape-testing": "^3.0.1",
+    "ape-tmpl": "^5.0.1",
+    "ape-updating": "^3.0.2",
+    "coz": "^5.1.5"
   },
   "engines": {
     "node": ">=4.0.0"

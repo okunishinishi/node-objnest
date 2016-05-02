@@ -4,16 +4,16 @@
  * @version {{pkg.version}}
  */
 
-"use strict";
+'use strict'
 
-const pkg = require('../package.json'),
-    create = require('./create'),
-    Objnest = require('./objnest');
+const pkg = require('../package.json')
+const create = require('./create')
+const Objnest = require('./objnest')
 
-let lib = create();
+let lib = create()
 
-lib.version = pkg.version;
-lib.create = create;
-lib.Objnest = Objnest;
+lib.version = pkg.version
+lib.create = create
+lib.Objnest = Objnest
 
-module.exports = lib;
+module.exports = lib
