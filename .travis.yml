@@ -2,7 +2,9 @@ language: node_js
 node_js:
 - '4.0'
 before_install: 
-- npm install istanbul mocha browserify -g
+- npm install istanbul mocha babel-clibrowserify -g
+- npm install babel-preset-es2015
+
 install:
 - npm install
 script:
