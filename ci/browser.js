@@ -13,9 +13,9 @@ const apeCompiling = require('ape-compiling')
 const filedel = require('filedel')
 
 apeTasking.runTasks('browser', [
-  () => filedel('browser/**/*.js'),
+  () => filedel('sims/browser/**/*.js'),
   () => apeCompiling.compileToEs5('**/*.js', {
     cwd: 'lib',
-    out: 'browser'
+    out: 'sims/browser'
   })
 ], true)
