@@ -6,14 +6,14 @@
 
 'use strict'
 
-const pkg = require('../package.json')
 const create = require('./create')
 const Objnest = require('./objnest')
 
 let lib = create()
 
-lib.version = pkg.version
-lib.create = create
-lib.Objnest = Objnest
+Object.assign(lib, create, {
+  create,
+  Objnest
+})
 
 module.exports = lib
