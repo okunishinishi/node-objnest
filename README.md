@@ -55,6 +55,7 @@ Convert nested object to flatten or expand.
 <!-- Section from "doc/readme/01.Installation.md.hbs" Start -->
 
 <a name="section-doc-readme-01-installation-md"></a>
+
 Installation
 -----
 
@@ -67,6 +68,7 @@ npm install objnest --save
 <!-- Section from "doc/readme/02.Usage.md.hbs" Start -->
 
 <a name="section-doc-readme-02-usage-md"></a>
+
 Usage
 -----
 
@@ -105,6 +107,7 @@ console.log(expanded) // => {foo: {bar: 'baz'}}
 <!-- Section from "doc/readme/03.Tips.md.hbs" Start -->
 
 <a name="section-doc-readme-03-tips-md"></a>
+
 Tips
 ----
 
