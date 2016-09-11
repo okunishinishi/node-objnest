@@ -15,5 +15,9 @@ runTasks('shim', [
   () => ababelES2015('**/*.js', {
     cwd: 'lib',
     out: 'shim/node'
+  }),
+  () => ababelES2015('**/*.js', {
+    cwd: 'lib',
+    out: 'shim/browser'
   })
 ], true)
