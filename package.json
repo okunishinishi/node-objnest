@@ -1,6 +1,6 @@
 {
   "name": "objnest",
-  "version": "3.0.7",
+  "version": "3.0.8",
   "description": "Convert nested object to flatten or expand.",
   "main": "shim/node",
   "browser": "shim/browser",
