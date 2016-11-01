@@ -9,7 +9,7 @@ const assert = require('assert')
 
 describe('objnest', () => {
 
-  let objnest = new Objnest()
+  let { expand, flatten } = new Objnest()
 
   before((done) => {
     done()
@@ -20,7 +20,7 @@ describe('objnest', () => {
   })
 
   it('Expand nested.', (done) => {
-    let obj = objnest.expand({
+    let obj = expand({
       'foo.bar': 'baz'
     })
     assert.deepEqual(obj, { foo: { bar: 'baz' } })
@@ -28,7 +28,7 @@ describe('objnest', () => {
   })
 
   it('Expand array.', (done) => {
-    let obj = objnest.expand({
+    let obj = expand({
       'foo.bar.baz': 'quz',
       'foo.bar.quzz[0]': 'hoge',
       'foo.bar.quzz[1].fuge[0]': 'fuge0',
@@ -55,7 +55,7 @@ describe('objnest', () => {
   })
 
   it('Expand object array', (done) => {
-    let expanded = objnest.expand({
+    let expanded = expand({
       'data[0].type': 'users',
       'data[0].attributes.key': 'foo_bar3',
       'data[0].attributes.email': 'apbc3@example.com',
@@ -85,7 +85,7 @@ describe('objnest', () => {
   })
 
   it('Run flatten.', (done) => {
-    let flattened = objnest.flatten({
+    let flattened = flatten({
       foo: {
         bar: 'baz',
         quz: 2,
@@ -109,7 +109,7 @@ describe('objnest', () => {
   })
 
   it('Flatten array.', (done) => {
-    let flattened = objnest.flatten({
+    let flattened = flatten({
       foo: {
         bar: {
           'baz': 'quz',
@@ -135,3 +135,4 @@ describe('objnest', () => {
   })
 })
 
+/* global describe, it */
