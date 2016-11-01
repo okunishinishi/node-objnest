@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/okunishinishi/node-objnest#readme",
   "dependencies": {
+    "abind": "^1.0.0",
     "extend": "^3.0.0"
   },
   "devDependencies": {
