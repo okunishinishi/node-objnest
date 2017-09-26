@@ -9,7 +9,7 @@ const assert = require('assert')
 
 describe('objnest', () => {
 
-  let { expand, flatten } = new Objnest()
+  let {expand, flatten} = new Objnest()
 
   before((done) => {
     done()
@@ -23,7 +23,7 @@ describe('objnest', () => {
     let obj = expand({
       'foo.bar': 'baz'
     })
-    assert.deepEqual(obj, { foo: { bar: 'baz' } })
+    assert.deepEqual(obj, {foo: {bar: 'baz'}})
     done()
   })
 
@@ -36,18 +36,18 @@ describe('objnest', () => {
     })
     console.log(obj)
     assert.deepEqual(obj, {
-      "foo": {
-        "bar": {
-          "quzz": [
-            "hoge",
+      'foo': {
+        'bar': {
+          'quzz': [
+            'hoge',
             {
-              "fuge": [
-                "fuge0",
-                "fuge1"
+              'fuge': [
+                'fuge0',
+                'fuge1'
               ]
             }
           ],
-          "baz": "quz"
+          'baz': 'quz'
         }
       }
     })
@@ -64,19 +64,19 @@ describe('objnest', () => {
       'data[1].attributes.email': 'apbc4@example.com'
     })
     assert.deepEqual(expanded, {
-      "data": [
+      'data': [
         {
-          "type": "users",
-          "attributes": {
-            "key": "foo_bar3",
-            "email": "apbc3@example.com"
+          'type': 'users',
+          'attributes': {
+            'key': 'foo_bar3',
+            'email': 'apbc3@example.com'
           }
         },
         {
-          "type": "users",
-          "attributes": {
-            "key": "foo_bar4",
-            "email": "apbc4@example.com"
+          'type': 'users',
+          'attributes': {
+            'key': 'foo_bar4',
+            'email': 'apbc4@example.com'
           }
         }
       ]
@@ -92,19 +92,19 @@ describe('objnest', () => {
         quzz: true
       }
     })
-    assert.deepEqual(flattened, { 'foo.bar': 'baz', 'foo.quz': 2, 'foo.quzz': true })
+    assert.deepEqual(flattened, {'foo.bar': 'baz', 'foo.quz': 2, 'foo.quzz': true})
     done()
   })
 
   it('Flatten css.', (done) => {
-    let flattened = new Objnest({ separator: ' ' }).flatten({
+    let flattened = new Objnest({separator: ' '}).flatten({
       body: {
-        "main": {
-          color: "#555"
+        'main': {
+          color: '#555'
         }
       }
     })
-    assert.deepEqual(flattened, { 'body main color': '#555' })
+    assert.deepEqual(flattened, {'body main color': '#555'})
     done()
   })
 
@@ -117,8 +117,8 @@ describe('objnest', () => {
             'hoge',
             {
               'fuge': [
-                "fuge0",
-                "fuge1"
+                'fuge0',
+                'fuge1'
               ]
             }
           ]
@@ -132,6 +132,17 @@ describe('objnest', () => {
       'foo.bar.quzz[1].fuge[1]': 'fuge1'
     })
     done()
+  })
+
+  it('Large object', () => {
+    console.time('Large object')
+    const flattend = flatten(
+      new Array(50000).fill(null).reduce((obj, v, i) => Object.assign(obj, {
+        [`attr-${i}`]: {foo: {bar: 'baz'}}
+      }), {})
+    )
+    assert.ok(flattend)
+    console.timeEnd('Large object')
   })
 })
 
