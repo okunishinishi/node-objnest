@@ -1,0 +1,24 @@
+/**
+ * Bud file for index.js
+ */
+
+'use strict'
+
+const pkg = require('../package.json')
+const path = require('path')
+module.exports = [
+  '.index.js.hbs',
+  '.index.mjs.hbs',
+].map((tmpl) => ({
+  force: true,
+  mode: '444',
+  tmpl,
+  path: path.basename(tmpl, '.hbs').replace(/^\./, ''),
+  data: {
+    pkg,
+  }
+}))
+
+if (!module.parent) {
+  require('coz').render(__filename)
+}

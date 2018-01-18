@@ -1,6 +1,6 @@
 {
   "name": "objnest",
-  "version": "4.0.2",
+  "version": "4.0.3",
   "description": "Convert nested object to flatten or expand.",
   "main": "lib",
   "browser": "shim/browser",
@@ -27,12 +27,12 @@
     "extend": "^3.0.0"
   },
   "devDependencies": {
-    "ababel": "^2.0.3",
+    "ababel": "^3.0.2",
     "ababel-es2015": "^2.0.2",
     "amocha": "^4.0.0",
     "ape-releasing": "^4.0.2",
     "ape-tasking": "^4.0.7",
-    "ape-tmpl": "^6.0.5",
+    "ape-tmpl": "^6.0.6",
     "ape-updating": "^4.0.4",
     "coz": "^6.0.14"
   },
