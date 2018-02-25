@@ -27,6 +27,7 @@
     "extend": "^3.0.0"
   },
   "devDependencies": {
+    "@babel/runtime": "^7.0.0-beta.40",
     "ababel": "^4.0.7",
     "amocha": "^5.0.0",
     "ape-releasing": "^4.0.2",
