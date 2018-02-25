@@ -28,13 +28,12 @@ describe('objnest', () => {
   })
 
   it('Expand array.', (done) => {
-    let obj = expand({
+    const obj = expand({
       'foo.bar.baz': 'quz',
       'foo.bar.quzz[0]': 'hoge',
       'foo.bar.quzz[1].fuge[0]': 'fuge0',
       'foo.bar.quzz[1].fuge[1]': 'fuge1'
     })
-    console.log(obj)
     assert.deepEqual(obj, {
       'foo': {
         'bar': {
@@ -55,7 +54,7 @@ describe('objnest', () => {
   })
 
   it('Expand object array', (done) => {
-    let expanded = expand({
+    const expanded = expand({
       'data[0].type': 'users',
       'data[0].attributes.key': 'foo_bar3',
       'data[0].attributes.email': 'apbc3@example.com',
@@ -127,10 +126,32 @@ describe('objnest', () => {
     })
     assert.deepEqual(flattened, {
       'foo.bar.baz': 'quz',
+      'foo.bar.quzz.length': 2,
       'foo.bar.quzz[0]': 'hoge',
       'foo.bar.quzz[1].fuge[0]': 'fuge0',
+      'foo.bar.quzz[1].fuge.length': 2,
       'foo.bar.quzz[1].fuge[1]': 'fuge1'
     })
+
+    assert.deepEqual(
+      expand(flattened),
+      {
+        "foo": {
+          "bar": {
+            "baz": "quz",
+            "quzz": [
+              "hoge",
+              {
+                "fuge": [
+                  "fuge0",
+                  "fuge1"
+                ]
+              }
+            ]
+          }
+        }
+      }
+    )
     done()
   })
 
