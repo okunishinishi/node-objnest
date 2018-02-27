@@ -127,9 +127,9 @@ describe('objnest', () => {
     })
     assert.deepEqual(flattened, {
       'foo.bar.baz': 'quz',
-      'foo.bar.quzz.length': 2,
+      'foo.bar.quzz[length]': 2,
       'foo.bar.quzz[0]': 'hoge',
-      'foo.bar.quzz[1].fuge.length': 2,
+      'foo.bar.quzz[1].fuge[length]': 2,
       'foo.bar.quzz[1].fuge[0]': 'fuge0',
       'foo.bar.quzz[1].fuge[1]': 'fuge1'
     })
