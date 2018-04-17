@@ -84,7 +84,7 @@ describe('objnest', () => {
   })
 
   it('Run flatten.', (done) => {
-    let flattened = flatten({
+    const flattened = flatten({
       foo: {
         bar: 'baz',
         quz: 2,
@@ -93,6 +93,16 @@ describe('objnest', () => {
     })
     assert.deepEqual(flattened, {'foo.bar': 'baz', 'foo.quz': 2, 'foo.quzz': true})
     done()
+  })
+
+  it('Flatten null', () => {
+    assert.deepEqual(
+      flatten({
+        a: 1,
+        b: null,
+      }),
+      {a: 1, b: null}
+    )
   })
 
   it('Flatten css.', (done) => {
