@@ -28,12 +28,12 @@
   },
   "devDependencies": {
     "@babel/runtime": "*",
-    "ababel": "^4.0.8",
+    "ababel": "^4.0.9",
     "amocha": "^5.0.0",
     "ape-releasing": "^4.0.2",
     "ape-tasking": "^4.0.7",
     "ape-tmpl": "^6.0.10",
-    "ape-updating": "^4.0.4",
+    "ape-updating": "^5.0.1",
     "coz": "^7.0.1"
   },
   "engines": {

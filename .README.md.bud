@@ -2,7 +2,7 @@
  * Bud file for README.md
  */
 
-"use strict"
+'use strict'
 
 const apeTmpl = require('ape-tmpl')
 const pkg = require('./package.json')
@@ -13,9 +13,6 @@ module.exports = apeTmpl.readmeMdBud({
   sections: 'doc/readme/*.md.hbs',
   badges: {
     travis: true,
-    codeclimate: true,
-    codeclimateCoverage: true,
-    gemnasium: false,
     npm: true,
     standard: true
   },
