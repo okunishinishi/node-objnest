@@ -8,7 +8,6 @@ const pkg = require('../package.json')
 const path = require('path')
 module.exports = [
   '.index.js.hbs',
-  '.index.mjs.hbs',
 ].map((tmpl) => ({
   force: true,
   mode: '444',
