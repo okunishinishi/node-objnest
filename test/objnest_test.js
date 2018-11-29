@@ -9,7 +9,7 @@ const assert = require('assert')
 
 describe('objnest', () => {
 
-  let {expand, flatten} = new Objnest()
+  let { expand, flatten } = new Objnest()
 
   before((done) => {
     done()
@@ -23,7 +23,7 @@ describe('objnest', () => {
     let obj = expand({
       'foo.bar': 'baz'
     })
-    assert.deepEqual(obj, {foo: {bar: 'baz'}})
+    assert.deepEqual(obj, { foo: { bar: 'baz' } })
     done()
   })
 
@@ -91,7 +91,7 @@ describe('objnest', () => {
         quzz: true
       }
     })
-    assert.deepEqual(flattened, {'foo.bar': 'baz', 'foo.quz': 2, 'foo.quzz': true})
+    assert.deepEqual(flattened, { 'foo.bar': 'baz', 'foo.quz': 2, 'foo.quzz': true })
     done()
   })
 
@@ -101,19 +101,19 @@ describe('objnest', () => {
         a: 1,
         b: null,
       }),
-      {a: 1, b: null}
+      { a: 1, b: null }
     )
   })
 
   it('Flatten css.', (done) => {
-    let flattened = new Objnest({separator: ' '}).flatten({
+    let flattened = new Objnest({ separator: ' ' }).flatten({
       body: {
         'main': {
           color: '#555'
         }
       }
     })
-    assert.deepEqual(flattened, {'body main color': '#555'})
+    assert.deepEqual(flattened, { 'body main color': '#555' })
     done()
   })
 
@@ -166,18 +166,20 @@ describe('objnest', () => {
   })
 
   it('Large object', () => {
-    console.time('Large object')
     const flattend = flatten(
       new Array(50000).fill(null).reduce((obj, v, i) => Object.assign(obj, {
-        [`attr-${i}`]: {foo: {bar: 'baz'}}
+        [`attr-${i}`]: { foo: { bar: 'baz' } }
       }), {})
     )
     assert.ok(flattend)
     console.timeEnd('Large object')
   })
 
-  it('From empty array', () => {
-
+  it('Convert date', () => {
+    const flattend = flatten({
+      d: new Date()
+    })
+    assert.ok(flattend.d)
   })
 })
 
