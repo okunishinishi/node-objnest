@@ -23,3 +23,4 @@ describe('create', () => {
   })
 })
 
+/* global describe, before, after, it */

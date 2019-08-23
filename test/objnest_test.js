@@ -181,6 +181,18 @@ describe('objnest', () => {
     })
     assert.ok(flattend.d)
   })
+
+  it('Top level array', () => {
+    assert.deepEqual(
+      expand(flatten( ['a'])),
+      ['a'],
+    )
+    assert.deepEqual(
+      expand(flatten( [['a']])),
+      [['a']],
+    )
+  })
+
 })
 
 /* global describe, it */
