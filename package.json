@@ -24,11 +24,11 @@
   },
   "homepage": "https://github.com/okunishinishi/node-objnest#readme",
   "dependencies": {
+    "@babel/runtime": "^7.12.5",
     "abind": "^1.0.5",
     "extend": "^3.0.2"
   },
   "devDependencies": {
-    "@babel/runtime": "^7.12.5",
     "ababel": "^6.1.5",
     "amocha": "^7.1.1",
     "ape-releasing": "^5.0.7",
